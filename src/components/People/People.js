@@ -17,7 +17,7 @@ class People extends React.Component {
 
     render() {
         const onlineList = this.state.people.map((person) =>
-            <li>{ person.username }</li>
+            <li key={ person.id }>{ person.username }</li>
         );
 
         return (

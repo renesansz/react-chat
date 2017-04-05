@@ -13,9 +13,9 @@ class ChatBoxControls extends React.Component {
 
     _renderButton() {
         if (this.state.user) {
-            return <button class="btn btn-default btn-lg" type="submit">Send</button>;
+            return <button className="btn btn-default btn-lg" type="submit">Send</button>;
         }
-        return <button class="btn btn-default btn-lg" type="submit">Register</button>;
+        return <button className="btn btn-default btn-lg" type="submit">Register</button>;
     }
 
     render() {

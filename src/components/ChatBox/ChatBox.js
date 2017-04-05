@@ -20,7 +20,9 @@ class ChatBox extends React.Component {
 
     render() {
         const messages = this.state.messages.map((message) =>
-            <ChatBoxCard author={ message.author } message={ message.content } />
+            <ChatBoxCard key={ message.id }
+                         author={ message.author }
+                         message={ message.content } />
         );
         
         return (
