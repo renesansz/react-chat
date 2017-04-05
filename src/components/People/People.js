@@ -22,10 +22,12 @@ class People extends React.Component {
 
         return (
             <div className="People">
-                <h4>People ({ this.state.people.length })</h4>
-                <ul className="online">
-                    { onlineList }
-                </ul>
+                <div className="content">
+                    <h4>People ({ this.state.people.length })</h4>
+                    <ul className="online">
+                        { onlineList }
+                    </ul>
+                </div>
             </div>
         );
     };

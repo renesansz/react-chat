@@ -27,11 +27,13 @@ class ChatBox extends React.Component {
         
         return (
             <div className="ChatBox">
-                <h1>Chat Box</h1>
-                <div className="messages">
-                    { messages }
+                <div className="content">
+                    <h4>Chat Box</h4>
+                    <div className="messages">
+                        { messages }
+                    </div>
+                    <ChatBoxControls />
                 </div>
-                <ChatBoxControls />
             </div>
         );
     };

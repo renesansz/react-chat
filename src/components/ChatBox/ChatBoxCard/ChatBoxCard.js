@@ -6,7 +6,9 @@ class ChatBoxCard extends React.Component {
     render() {
         return (
             <div className="ChatBoxCard">
-                <span className="user">{ this.props.author }</span>: { this.props.message }
+                <div className="message">
+                    <strong className="user">{ this.props.author }</strong>: { this.props.message }
+                </div>
             </div>
         );
     };
