@@ -9,7 +9,7 @@ class ChatBoxCard extends React.Component {
         return (
             <div className={ className }>
                 <div className="message">
-                    <strong className="user">{ this.props.author }</strong>: { this.props.message }
+                    <strong className="user">{ (this.props.isUserAuthor) ? 'You' : this.props.author }</strong>: { this.props.message }
                 </div>
             </div>
         );
