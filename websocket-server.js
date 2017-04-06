@@ -178,13 +178,13 @@ function webSocketOnRequest(req) {
         console.log('Client ' + client + ' has disconnected.');
         clientList.splice(index, 1); // Remove client from list
         people.splice(index, 1);
-        
+
         if (username !== null) {
             // Remove client from list
             colors.push(userColor); // Marked the user's color to be available
-            
+
             var peopleList = [];
-            
+
             people.forEach(function (person) {
                 if (person.username && person.userColor)
                     peopleList.push({

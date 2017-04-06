@@ -6,22 +6,11 @@ import ChatBoxCard from './ChatBoxCard/ChatBoxCard';
 import './ChatBox.css';
 
 class ChatBox extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            messages: [
-                { id: 1, author: 'Jolli Bebeng', content: 'Hi!' },
-                { id: 2, author: 'Mc Dodongs', content: 'Hello!' },
-                { id: 3, author: 'George Tilap', content: 'Hola!' }
-            ]
-        };
-    }
-
     render() {
-        const messages = this.state.messages.map((message) =>
+        const messages = this.props.messages.map((message) =>
             <ChatBoxCard key={ message.id }
                          author={ message.author }
+                         isUserAuthor={ (this.props.user === message.author) ? true : false }
                          message={ message.content } />
         );
         
@@ -32,7 +21,8 @@ class ChatBox extends React.Component {
                     <div className="messages">
                         { messages }
                     </div>
-                    <ChatBoxControls />
+                    <ChatBoxControls sendMessage={ this.props.sendMessage }
+                                     isLoggedIn={ (this.props.user) ? true : false } />
                 </div>
             </div>
         );

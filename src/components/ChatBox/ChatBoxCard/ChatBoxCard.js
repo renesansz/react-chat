@@ -4,8 +4,10 @@ import './ChatBoxCard.css';
 
 class ChatBoxCard extends React.Component {
     render() {
+        const className = (this.props.isUserAuthor) ? 'ChatBoxCard me' : 'ChatBoxCard';
+
         return (
-            <div className="ChatBoxCard">
+            <div className={ className }>
                 <div className="message">
                     <strong className="user">{ this.props.author }</strong>: { this.props.message }
                 </div>
