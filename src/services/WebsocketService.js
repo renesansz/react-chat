@@ -27,6 +27,7 @@ const BROADCAST_TYPES = {
 class WebsocketService {
     /**
      * @constructor
+     * 
      * @param {String} server The server url
      */
     constructor(server) {
