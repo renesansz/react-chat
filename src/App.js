@@ -93,13 +93,24 @@ class App extends Component {
                 });
             break;
             case WebsocketService.BROADCAST_TYPES.ON_NEW_USER_CONNECT:
+                messages = this.state.messages;
                 people = this.state.people;
-
+                
                 data.user.id = people.length + 1;
+
+                let systemMessage = {
+                    id: messages.length + 1,
+                    author: 'System',
+                    content: `${ data.user.username } joined the conversation.`,
+                    color: '#E3E3E3'
+                };
+                
+                messages.push(systemMessage);
                 people.push(data.user);
 
                 this.setState({
-                    people: people
+                    messages: messages,
+                    people: people,
                 });
             break;
             case WebsocketService.BROADCAST_TYPES.ON_MESSAGE_RECEIVED:
@@ -123,8 +134,23 @@ class App extends Component {
     }
 
     sendMessage(message) {
-        if (!this.state.user)
-            this.setState({ user: message, isLoggedIn: true });
+        if (!this.state.user) {
+            let messages = this.state.messages;
+            let systemMessage = {
+                id: messages.length + 1,
+                author: 'System',
+                content: `You are known as ${ message }`,
+                color: '#E3E3E3'
+            };
+
+            messages.push(systemMessage);
+
+            this.setState({
+                messages: messages,
+                user: message,
+                isLoggedIn: true
+            });
+        }
 
         this.state.websocket.sendMessage(message);
     }
