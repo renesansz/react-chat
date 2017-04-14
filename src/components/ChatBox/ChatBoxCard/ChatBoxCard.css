@@ -19,3 +19,10 @@
   float: right;
   box-shadow: none;
 }
+
+.ChatBoxCard.system .message {
+  max-width: calc(94% - 10px);
+  border-radius: 0;
+  width: calc(94% - 10px);
+  background: #fbfbfb;
+}

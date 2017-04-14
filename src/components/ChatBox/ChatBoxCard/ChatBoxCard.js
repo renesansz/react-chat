@@ -4,7 +4,12 @@ import './ChatBoxCard.css';
 
 class ChatBoxCard extends React.Component {
     render() {
-        const className = (this.props.isUserAuthor) ? 'ChatBoxCard me' : 'ChatBoxCard';
+        let className = 'ChatBoxCard';
+
+        if (this.props.isUserAuthor)
+            className += ' me';
+        else if (this.props.author === 'System')
+            className += ' system';
 
         return (
             <div className={ className }>
