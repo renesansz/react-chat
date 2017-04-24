@@ -73,6 +73,20 @@ class WebsocketService {
             console.error('Websocket is not initialized...');
         }
     }
+
+    /** ======== Getters/Setters ======== **/
+
+    set server(server) {
+        if (typeof server !== 'string') {
+            throw new error('`server` should be a string');
+        }
+        
+        this.server = server;
+    }
+
+    get server() {
+        return this.server;
+    }
 }
 
 export default WebsocketService;
