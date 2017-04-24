@@ -156,7 +156,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-            <AppHeader />
+                <AppHeader />
                 <div className="App-container">
                     <ChatBox user={ this.state.user }
                              messages={ this.state.messages }
