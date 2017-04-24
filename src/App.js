@@ -62,8 +62,6 @@ class App extends Component {
                 this.setState({
                     people: people
                 });
-
-                console.log(data);
             break;
             case WebsocketService.BROADCAST_TYPES.ON_USER_DISCONNECT:
                 people = [];
